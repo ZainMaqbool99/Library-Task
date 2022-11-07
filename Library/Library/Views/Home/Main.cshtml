@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Main";
+}
+@section styles{
+    <link rel="Stylesheet" href="/css/main.css" />
+}
+<script src="/lib/jquery/dist/jquery.js"></script>
+<script src="/css/main.css"></script>
+
+
+<div class="container">
+    <div class="element">
+        <label class="lbl">Category</label>
+        <select class="selectBox" id="CategoryId" asp-items="@(new SelectList(ViewBag.Categories, "CategoryId", "CategoryName"))"></select>
+    </div>
+    <div class="element">
+        <label class="lbl">Sub-Category</label>
+        <select class="selectBox" id = "SubCategoryId"></select>
+    </div>
+    <div class="element">
+        <div class="btnElement">
+            <button class="btn" id = "btnView">View Books</button>
+        </div>
+    </div>
+</div>
+
+@*<li id="list">
+
+</li>*@
+
+
+<table id="tblView" class="tbl">
+    <tr class="tr">
+        <th class="th">BookId</th>
+        <th class="th">BookName</th>
+        <th class="th">Author</th>
+    </tr>
+</table>
+
+<script src="~/js/libext.js"></script>
